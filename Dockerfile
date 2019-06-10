@@ -5,8 +5,9 @@ RUN apk add --no-cache git bash \
     && npm install react \
     && npm install react-dom \ 
     && npm install https://github.com/LLK/scratch-gui.git \ 
+    && cd scratch-gui 
 ##    && git clone https://github.com/LLK/scratch-gui.git \
-##    && cd scratch-gui \
-    && npm install
+    
+##    && npm install
 EXPOSE 8601
 CMD ["npm","start"]
