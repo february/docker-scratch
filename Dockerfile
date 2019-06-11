@@ -1,5 +1,11 @@
 FROM node:alpine
 
+LABEL maintainer="zhang.hao@live.com"  
+LABEL version="1.0"
+LABEL description="This is scratch3 gui image from official repository."
+
+ENV NODE_ENV development
+
 RUN apk add --no-cache git bash \ 
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
@@ -11,4 +17,5 @@ RUN apk add --no-cache git bash \
     
 WORKDIR /usr/src/app/scratch-gui
 EXPOSE 80
+ENV NODE_ENV production
 CMD ["npm","start"]
